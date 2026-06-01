@@ -9,32 +9,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff;
 }
-
-.header {
-  background-color: rgb(4, 0, 255);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 80px; 
-  width: 100%;
-}
-
 .lugx {
   width: 90px;
-}
-
-.secondpart {
-  display: flex;
-  align-items: center;
-  gap: 15px; 
-}
-
-.a {
-  color: white;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .a:hover {
@@ -178,26 +154,33 @@ body {
   cursor: pointer;
 }
 
-/* ==============================================
-   🚨 أكواد التجاوب (Responsive) لكل الشاشات 🚨
-   ============================================== */
-
-/* 📱 1. شاشات الموبايل (لما تفتح من التليفون) */
-@media (max-width: 768px) {
+ 
+ 
   .header {
-    padding: 15px 20px; /* بنقلل المسافات عشان الشاشة ضيقة */
-  }
-  
-  .secondpart {
-    display: none; /* بنخفي اللينكات في الموبايل عشان ميتكربسوش فوق بعض */
-  }
+  background-color: rgb(4, 0, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* بيزق اللوجو على الشمال واللينكات على اليمين */
+  padding: 15px 40px; /* مسافة داخلية متزنة عشان العناصر متبقاش لازقة في حواف الشاشة */
+  width: 100%;
+}
 
-  .container {
-    flex-direction: column; /* 🪄 السحر هنا: بنخلي الكلام والصورة تحت بعض بدل جنب بعض */
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 0 0 50px 50px; /* بنقلل الكيرف الأزرق عشان يناسب الموبايل */
-  }
+.secondpart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* بيخلي اللينكات تترص ورا بعضها من اليمين */
+  gap: 20px; /* 🟢 السحر هنا: بيعمل مسافة ثابتة ومحترمة بين كل لينك والتاني ومن غير ما يلزقوا */
+}
+
+.a {
+  color: white;
+  padding: 8px 12px; /* مسافة حولين النص عشان لما تعمل هافر تبان شيك */
+  text-decoration: none;
+  font-size: 16px; /* حجم خط مناسب للشاشات، الـ 20px كان كبير شوية */
+  font-family: arial;
+  font-weight: bold;
+  white-space: nowrap; /* 🪄 السطر ده بيمنع الكلام (زي Product details) إنه يتكسر على سطرين لو الشاشة ضاقت */
+}
 
   .text-side {
     order: 1; /* الكلام يظهر الأول فوق */
@@ -227,30 +210,28 @@ body {
     gap: 15px;
     text-align: center;
   }
-}
 
-/* 💻 2. شاشات التابلت واللابتوب الصغيرة (المتوسطة) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .header, .container, .ourshop, .trending {
-    padding: 20px 40px; /* مسافات متوسطة تناسب حجم اللابتوب */
+  @media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* بيخلي اللوجو فوق واللينكات تحت بعضها */
+    gap: 15px;
+    padding: 15px;
+    text-align: center;
   }
 
-  .best {
-    font-size: 38px; /* خط متوسط للعنوان */
+  .secondpart {
+    flex-wrap: wrap; /* لو اللينكات كتير على شاشة الموبايل، بتنزل سطر جديد تلقائي بدل ما تخرج برة الشاشة */
+    justify-content: center; /* بيوسطن اللينكات في الموبايل */
+    gap: 10px;
   }
 
-  .io {
-    max-width: 280px; /* بنصغر الصورة شوية عشان متزقش الكلام برة الشاشة */
+  .a {
+    font-size: 14px; /* بنصغر الخط شوية عشان يناسب الموبايل */
+    padding: 5px 8px;
   }
-}
-
-/* 🖥️ 3. الشاشات الكبيرة جداً وشاشات العرض الواسعة */
-@media (min-width: 1400px) {
-  /* عشان الموقع ميفردش بشكل غبي على الشاشات الواسعة، بنحدد له عرض أقصى ونوسطنه */
-  .header, .container, .trending {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0 0 40px 40px; /* بنحافظ على الكيرف مظبوط */
+  
+  .aF {
+    padding: 8px 15px;
+    font-size: 13px;
   }
 }
