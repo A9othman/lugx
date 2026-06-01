@@ -177,3 +177,80 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* ==============================================
+   🚨 أكواد التجاوب (Responsive) لكل الشاشات 🚨
+   ============================================== */
+
+/* 📱 1. شاشات الموبايل (لما تفتح من التليفون) */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px; /* بنقلل المسافات عشان الشاشة ضيقة */
+  }
+  
+  .secondpart {
+    display: none; /* بنخفي اللينكات في الموبايل عشان ميتكربسوش فوق بعض */
+  }
+
+  .container {
+    flex-direction: column; /* 🪄 السحر هنا: بنخلي الكلام والصورة تحت بعض بدل جنب بعض */
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 0 0 50px 50px; /* بنقلل الكيرف الأزرق عشان يناسب الموبايل */
+  }
+
+  .text-side {
+    order: 1; /* الكلام يظهر الأول فوق */
+  }
+
+  .image-side {
+    order: 2; /* وتحته الصورة */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .best {
+    font-size: 30px; /* بنصغر الخط عشان ميتكسرش بشكل وحش في الموبايل */
+  }
+
+  .undertext {
+    margin: 0 auto; /* بنخلي صندوق البحث في النص بالظبط */
+  }
+  
+  .ourshop, .trending {
+    padding: 0 20px; /* بنقلل هوامش الـ Trending في الموبايل */
+  }
+
+  .trending {
+    flex-direction: column; /* بنخلي العنوان وزرار view all فوق بعض */
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* 💻 2. شاشات التابلت واللابتوب الصغيرة (المتوسطة) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header, .container, .ourshop, .trending {
+    padding: 20px 40px; /* مسافات متوسطة تناسب حجم اللابتوب */
+  }
+
+  .best {
+    font-size: 38px; /* خط متوسط للعنوان */
+  }
+
+  .io {
+    max-width: 280px; /* بنصغر الصورة شوية عشان متزقش الكلام برة الشاشة */
+  }
+}
+
+/* 🖥️ 3. الشاشات الكبيرة جداً وشاشات العرض الواسعة */
+@media (min-width: 1400px) {
+  /* عشان الموقع ميفردش بشكل غبي على الشاشات الواسعة، بنحدد له عرض أقصى ونوسطنه */
+  .header, .container, .trending {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0 0 40px 40px; /* بنحافظ على الكيرف مظبوط */
+  }
+}
